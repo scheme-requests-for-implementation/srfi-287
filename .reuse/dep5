@@ -1,0 +1,14 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: XCharter-*.woff2
+Copyright: 1989-1992 Bitstream Inc.
+License: Bitstream-Charter
+
+Files: RobotoMono-*.woff2
+Copyright: 2015 Google LLC
+License: OFL-1.1
+
+Files: URWClassicSans-*.woff2
+Copyright: URW Type Foundry GmbH
+License: LicenseRef-Aladdin-9
+Comment: Source: https://github.com/ArtifexSoftware/ghostpdl/tree/master/pcl/urwfonts
