@@ -75,7 +75,7 @@ SPDX-License-Identifier: MIT
 
 <h2 id="rnrs-conditions">R<sup>6</sup>RS conditions</h2>
 <p>In this SRFI, &ldquo;an assertion violation is raised&rdquo; means that an error is signalled and that the condition has type <code>&amp;assertion</code>. This should be a compound condition composed of a <code>&amp;who</code> condition with the procedure name defined in this document, and an <code>&amp;irritants</code> condition with the irritants in the order described.</p>
-<p>As well as simple assertion violations, error-raising behaviour is described in terms of compound conditions composed of simple condition types defined in the <a href="#conditions">graph conditions section</a>. These should be sub-types of <code>&assertion</code>. Additionally, for all compound conditions discussed, these should be additionally compounded with a <code>&amp;who</code> condition with the procedure name defined in this document.</p>
+<p>As well as simple assertion violations, error-raising behaviour is described in terms of compound conditions composed of simple condition types defined in the <a href="#conditions">graph conditions section</a>. These should be sub-types of <code>&amp;assertion</code>. Additionally, for all compound conditions discussed, these should be additionally compounded with a <code>&amp;who</code> condition with the procedure name defined in this document.</p>
 <!--p>R<sup>6</sup>RS conditions may not be available, in which implementations may simply signal an error (in the sense of the R<sup>7</sup>RS) with the described irritants.</p-->
 
 <h2 id="argument-restrictions">Argument restrictions and convention</h2>
@@ -896,20 +896,20 @@ context
 
 <div class="feature">
   <span class="category"><code>(srfi :287 graph)</code><br>procedure</span>
-  <code class="signature">(<a href="#make-label-violation" id="make-label-violation">make-label-violation</var> <var>label</var>)</code><br>
+  <code class="signature">(<a href="#make-label-violation" id="make-label-violation">make-label-violation</a> <var>label</var>)</code><br>
   <code class="signature">(<a href="#label-violation?" id="label-violation?">label-violation?</a> <var>obj</var>)</code><br>
   <code class="signature">(<a href="#label-violation-label" id="label-violation-label">label-violation-label</a> <var>&amp;label</var>)</code></div>
 <p>A label condition object consists of a single label field, and is intended to be used in compound conditions for both node and edge labels with respect to the respective comparator of some graph. The <code>label-violation?</code> procedure returns <code>#t</code> if <var>obj</var> is an <code>&amp;label</code> label condition object, <code>#f</code> otherwise. The label field can be retrieved using <code>label-violation-label</code>.</p>
 
 <div class="feature">
   <span class="category"><code>(srfi :287 graph)</code><br>procedure</span>
-  <code class="signature">(<a href="#make-source-violation" id="make-source-violation">make-source-violation</var>)</code><br>
+  <code class="signature">(<a href="#make-source-violation" id="make-source-violation">make-source-violation</a>)</code><br>
   <code class="signature">(<a href="#source-violation?" id="source-violation?">source-violation?</a> <var>obj</var>)</code></div>
 <p>A source condition object consists of no fields and is intended to be used in compound conditions to indicate errors in the source part of edge insertions, or erroneous lists of incoming edges in node contexts. The <code>source-violation?</code> procedure returns <code>#t</code> if <var>obj</var> is an <code>&amp;source</code> label condition object, <code>#f</code> otherwise.</p>
 
 <div class="feature">
   <span class="category"><code>(srfi :287 graph)</code><br>procedure</span>
-  <code class="signature">(<a href="#make-target-violation" id="make-target-violation">make-target-violation</var>)</code><br>
+  <code class="signature">(<a href="#make-target-violation" id="make-target-violation">make-target-violation</a>)</code><br>
   <code class="signature">(<a href="#target-violation?" id="target-violation?">target-violation?</a> <var>obj</var>)</code></div>
 <p>A target condition object consists of no fields and is intended to be used in compound conditions to indicate errors in the target part of edge insertions, or erroneous lists of outgoing edges in node contexts. The <code>target-violation?</code> procedure returns <code>#t</code> if <var>obj</var> is an <code>&amp;target</code> label condition object, <code>#f</code> otherwise.</p>
 
